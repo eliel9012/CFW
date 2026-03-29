@@ -65,6 +65,8 @@ struct SettingsView: View {
                     labelRow(icon: "globe", label: "Idioma", value: "Português do Brasil")
                     Divider()
                     labelRow(icon: "app.badge", label: "Versão", value: appVersion)
+                    Divider()
+                    labelRow(icon: "c.circle", label: "Copyright", value: "© 2026 Eliel Felipe Junior")
                 }
 
                 // MARK: Redefinir
