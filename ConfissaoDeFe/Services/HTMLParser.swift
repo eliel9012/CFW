@@ -226,9 +226,15 @@ enum HTMLParser {
                 let body = removeSectionPrefix(from: text, roman: roman)
                 if !body.isEmpty { bodyLines.append(body) }
             } else if currentRoman != nil {
-                if refs.isEmpty && looksLikeReferences(text) {
-                    refs = text
-                } else if !looksLikeReferences(text) {
+                if looksLikeReferences(text) {
+                    // Accumulate all reference paragraphs for this section
+                    if refs.isEmpty {
+                        refs = text
+                    } else {
+                        refs += " " + text
+                    }
+                } else if refs.isEmpty {
+                    // Only add to body before references have started
                     bodyLines.append(text)
                 }
             }
@@ -271,16 +277,23 @@ enum HTMLParser {
     // MARK: - Bible Reference Detection
 
     private static let refPattern: NSRegularExpression? = {
-        let books = "Gen|Gên|Êx|Exo|Lev|Lv|Num|Nm|Deut|Dt|Jos|Jl|Jz|Rut|Sam|Reis|Cr|Esd|Nee|Est|Jó|Jó|Sal|Prov|Pv|Ecl|Cânt|Isa|Is|Jer|Lam|Eze|Ez|Dan|Dn|Os|Ose|Joel|Am|Amos|Ob|Jon|Miq|Nau|Hab|Sof|Age|Zac|Mal|Mat|Mt|Mar|Mc|Luc|Lc|Jo|João|At|Atos|Rom|Cor|Gal|Ef|Fil|Col|Tess|Tim|Tito|Tt|File|Heb|Tia|Tiago|Ped|Pedro|Jud|Judas|Apoc|Ap|Jud|II|I "
+        let books = "Gen|Gên|Êx|Exo|Lev|Lv|Num|Nm|Deut|Dt|Jos|Jl|Jz|Rut|Sam|Reis|Cr|Esd|Nee|Est|Jó|Sal|Prov|Pv|Ecl|Cânt|Isa|Is|Jer|Lam|Eze|Ez|Dan|Dn|Os|Ose|Joel|Am|Amos|Ob|Jon|Miq|Nau|Hab|Sof|Age|Zac|Mal|Mat|Mt|Mar|Mc|Luc|Lc|Jo|João|At|Atos|Rom|Cor|Gal|Ef|Fil|Col|Tess|Tim|Tito|Tt|File|Heb|Tia|Tiago|Ped|Pedro|Jud|Judas|Apoc|Ap"
+        // Allow optional "I "/"II " prefix and period/comma/space between book and chapter number
         return try? NSRegularExpression(
-            pattern: "(?:^|\\s)(?:\(books))\\s*\\d+\\s*[:\\.]",
+            pattern: "(?:^|\\s)(?:I{1,2}\\s+)?(?:\(books))[.,;\\s]*\\d+\\s*[:\\.]",
             options: .caseInsensitive
         )
     }()
 
     static func looksLikeReferences(_ text: String) -> Bool {
-        guard let regex = refPattern else { return false }
-        return regex.firstMatch(in: text,
-                                range: NSRange(text.startIndex..., in: text)) != nil
+        // Primary: regex match for Bible reference patterns
+        if let regex = refPattern,
+           regex.firstMatch(in: text, range: NSRange(text.startIndex..., in: text)) != nil {
+            return true
+        }
+        // Secondary heuristic: multiple semicolons + chapter:verse patterns
+        let semicolonCount = text.filter { $0 == ";" }.count
+        let hasChapterVerse = text.range(of: #"\d+\s*:\s*\d+"#, options: .regularExpression) != nil
+        return semicolonCount >= 2 && hasChapterVerse
     }
 }
