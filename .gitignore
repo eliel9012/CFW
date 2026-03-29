@@ -1,0 +1,30 @@
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/project.xcworkspace/
+xcuserdata/
+.DS_Store
+
+# Build
+DerivedData/
+build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Swift Package Manager
+Package.resolved
+.build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
