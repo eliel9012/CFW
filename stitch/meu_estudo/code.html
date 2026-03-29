@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "surface-container": "#f0eee9",
+                        "tertiary-fixed": "#ffdead",
+                        "inverse-on-surface": "#f2f1ec",
+                        "on-surface-variant": "#44474d",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b6c7eb",
+                        "surface-tint": "#4e5f7e",
+                        "outline-variant": "#c5c6ce",
+                        "surface": "#fbf9f4",
+                        "surface-dim": "#dbdad5",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#281900",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c19",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf9f4",
+                        "on-primary-fixed": "#081b38",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-high": "#eae8e3",
+                        "secondary-fixed": "#ffdea5",
+                        "on-tertiary-container": "#ad8d5b",
+                        "surface-container-highest": "#e4e2dd",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f5f3ee",
+                        "inverse-primary": "#b6c7eb",
+                        "surface-variant": "#e4e2dd",
+                        "tertiary-fixed-dim": "#e5c18a",
+                        "on-secondary-container": "#785a1a",
+                        "on-secondary-fixed": "#261900",
+                        "primary": "#031632",
+                        "surface-bright": "#fbf9f4",
+                        "outline": "#75777e",
+                        "on-primary-container": "#8293b5",
+                        "tertiary": "#211400",
+                        "primary-container": "#1a2b48",
+                        "on-surface": "#1b1c19",
+                        "on-error-container": "#93000a",
+                        "secondary": "#775a19",
+                        "on-primary-fixed-variant": "#374765",
+                        "primary-fixed": "#d7e2ff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#5b4217",
+                        "tertiary-container": "#3c2700",
+                        "inverse-surface": "#30312e",
+                        "secondary-container": "#fed488",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Newsreader", "serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #fbf9f4;
+            color: #1b1c19;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Desktop Sidebar Navigation (Shared Component) -->
+<aside class="hidden md:flex flex-col h-screen fixed left-0 top-0 w-80 bg-surface-container-low border-r border-outline-variant/20 z-40">
+<div class="px-8 py-10">
+<h1 class="text-secondary font-headline italic text-2xl">Santuário Digital</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="text-outline px-4 py-3 flex items-center gap-4 hover:bg-surface-container-highest/50 transition-colors rounded-lg font-headline text-lg" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span>Sumário</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-4 hover:bg-surface-container-highest/50 transition-colors rounded-lg font-headline text-lg" href="#">
+<span class="material-symbols-outlined">grade</span>
+<span>Favoritos</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-4 hover:bg-surface-container-highest/50 transition-colors rounded-lg font-headline text-lg" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span>Notas</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-4 hover:bg-surface-container-highest/50 transition-colors rounded-lg font-headline text-lg" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>Histórico</span>
+</a>
+<a class="bg-surface-container-highest text-primary px-4 py-3 flex items-center gap-4 rounded-lg font-headline text-lg translate-x-1 transition-transform shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span>Meu Estudo</span>
+</a>
+<a class="text-outline px-4 py-3 flex items-center gap-4 hover:bg-surface-container-highest/50 transition-colors rounded-lg font-headline text-lg" href="#">
+<span class="material-symbols-outlined">info</span>
+<span>Sobre</span>
+</a>
+</nav>
+</aside>
+<!-- Top App Bar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 backdrop-blur-md flex justify-between items-center px-6 py-4 md:pl-80">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-xl font-headline font-bold text-primary tracking-tight">Meu Estudo</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-primary p-2 active:opacity-70 active:scale-95 transition-all">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<main class="min-h-screen pt-20 pb-24 md:pb-10 md:pl-80 px-6 max-w-7xl mx-auto">
+<!-- Tabs Section (Editorial Layout) -->
+<section class="mt-8 mb-12">
+<div class="flex items-baseline justify-between border-b border-outline-variant/30 overflow-x-auto no-scrollbar">
+<div class="flex gap-8">
+<button class="pb-4 text-secondary border-b-2 border-secondary font-label font-medium uppercase tracking-widest text-xs transition-colors">
+                        Favoritos
+                    </button>
+<button class="pb-4 text-outline hover:text-secondary font-label font-medium uppercase tracking-widest text-xs transition-colors">
+                        Destaques
+                    </button>
+<button class="pb-4 text-outline hover:text-secondary font-label font-medium uppercase tracking-widest text-xs transition-colors">
+                        Minhas Notas
+                    </button>
+</div>
+<div class="hidden sm:block text-[10px] font-label text-outline uppercase tracking-[0.2em] opacity-50">
+                    Arquivo Pessoal • 2024
+                </div>
+</div>
+</section>
+<!-- Content Grid (Favorites Active) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main List Column -->
+<div class="lg:col-span-8 space-y-12">
+<!-- Scriptorium Card 01 -->
+<article class="group relative bg-surface-container-lowest p-8 rounded-xl transition-all hover:bg-surface-container-low/50">
+<div class="absolute left-0 top-8 w-[2px] h-12 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-label text-secondary tracking-widest uppercase font-medium">Capítulo III • Do Decreto Eterno de Deus</span>
+<button class="text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grade</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline text-primary mb-4 leading-tight">"Deus, desde toda a eternidade, pelo muito sábio e santo conselho da sua própria vontade..."</h3>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed mb-6 opacity-80">
+                        Seção 1. Livremente e de modo imutável, ordenou tudo o que sucede; todavia, de tal modo que nem Deus é o autor do pecado...
+                    </p>
+<div class="flex items-center gap-4 text-xs font-label text-outline uppercase tracking-wider">
+<span>Adicionado em 12 Out</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<a class="text-secondary hover:underline decoration-secondary/30 underline-offset-4" href="#">Ler Capítulo Completo</a>
+</div>
+</article>
+<!-- Scriptorium Card 02 -->
+<article class="group relative bg-surface-container-lowest p-8 rounded-xl transition-all hover:bg-surface-container-low/50">
+<div class="absolute left-0 top-8 w-[2px] h-12 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="text-xs font-label text-secondary tracking-widest uppercase font-medium">Capítulo VIII • De Cristo o Mediador</span>
+<button class="text-outline hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grade</span>
+</button>
+</div>
+<h3 class="text-2xl font-headline text-primary mb-4 leading-tight">"Aprouve a Deus, em seu eterno propósito, escolher e ordenar o Senhor Jesus..."</h3>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed mb-6 opacity-80">
+                        Seção 2. O Filho de Deus, a segunda pessoa da Trindade, sendo verdadeiro e eterno Deus, igual ao Pai...
+                    </p>
+<div class="flex items-center gap-4 text-xs font-label text-outline uppercase tracking-wider">
+<span>Adicionado em 05 Out</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<a class="text-secondary hover:underline decoration-secondary/30 underline-offset-4" href="#">Ler Capítulo Completo</a>
+</div>
+</article>
+</div>
+<!-- Annotation Gutter / Sidebar Stats -->
+<aside class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<h4 class="font-headline text-xl text-primary mb-6">Resumo de Estudo</h4>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<span class="font-label text-sm text-on-surface-variant">Favoritos</span>
+<span class="font-label font-bold text-secondary">24</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label text-sm text-on-surface-variant">Notas Ativas</span>
+<span class="font-label font-bold text-secondary">12</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label text-sm text-on-surface-variant">Capítulos Lidos</span>
+<span class="font-label font-bold text-secondary">8</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-outline-variant/20">
+<div class="aspect-video w-full rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105 duration-700" data-alt="Close-up of an old leather bound book with a gold silk bookmark on a warm wooden desk with soft candlelight atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbqzCpcjKERH10T_skvLK20z-qUvlBAtkeFi8kZIot_eAyBJB8cq-KBM6Wvqq5lXU7XI5bjFFV3SvIVXngSiL2BIcH2em2kQtOmq76rF4TQ1JYcWY0zIOB9eRmq75bPDfuDcl1y_m3_EV11n6NpBnZryxBnqiU0MvWPzWf79TwDNo_uQocE_hSkm0tRdYg070eRe614rkF3PpRyEhxY1ODzyNTZNfBdR0p2DBXAwiyTmOZ3aLg44sLhBGo_Jc9D_PpKHwz7bcR22s"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-3xl">auto_stories</span>
+</div>
+</div>
+<p class="mt-4 font-body text-sm text-on-surface-variant italic text-center">"O estudo da Palavra é a lâmpada para os passos."</p>
+</div>
+</div>
+<!-- Subtle Help Card -->
+<div class="bg-primary-container p-6 rounded-xl text-on-primary-fixed">
+<span class="material-symbols-outlined mb-4 text-secondary-fixed">tips_and_updates</span>
+<h5 class="font-headline text-lg mb-2">Dica de Estudo</h5>
+<p class="font-label text-sm leading-relaxed opacity-80">
+                        Use o sistema de Destaques para marcar conceitos de teologia sistemática que você deseja revisar posteriormente.
+                    </p>
+</div>
+</aside>
+</div>
+<!-- Optional Empty State (Hidden when content exists, but structured as requested) -->
+<div class="hidden flex-col items-center justify-center py-32 text-center">
+<div class="w-32 h-32 mb-8 relative">
+<div class="absolute inset-0 bg-surface-container-highest rounded-full blur-2xl opacity-50"></div>
+<span class="material-symbols-outlined text-outline text-7xl relative">book_4</span>
+</div>
+<h3 class="font-headline text-3xl text-primary mb-4">Seu Scriptorium está vazio</h3>
+<p class="font-body text-on-surface-variant text-lg max-w-sm mx-auto leading-relaxed">
+                Comece sua jornada marcando suas seções favoritas ou escrevendo suas primeiras reflexões nos capítulos da Confissão.
+            </p>
+<button class="mt-8 px-8 py-3 bg-primary text-on-primary rounded-full font-label font-medium hover:bg-primary-container transition-colors">
+                Explorar Capítulos
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Shared Component) -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center bg-[#ffffff]/80 backdrop-blur-xl pb-safe pt-2 border-t-[0.5px] border-[#75777e]/20 z-50 shadow-[0_-1px_10px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#75777e] hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="font-label text-[11px] font-medium tracking-tight mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#75777e] hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">menu_book</span>
+<span class="font-label text-[11px] font-medium tracking-tight mt-1">Capítulos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#775a19] font-bold scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<span class="font-label text-[11px] tracking-tight mt-1">Meu Estudo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#75777e] hover:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<span class="font-label text-[11px] font-medium tracking-tight mt-1">Ajustes</span>
+</a>
+</nav>
+</body></html>

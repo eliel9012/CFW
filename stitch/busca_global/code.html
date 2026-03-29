@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-container": "#f0eee9",
+              "tertiary-fixed": "#ffdead",
+              "inverse-on-surface": "#f2f1ec",
+              "on-surface-variant": "#44474d",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b6c7eb",
+              "surface-tint": "#4e5f7e",
+              "outline-variant": "#c5c6ce",
+              "surface": "#fbf9f4",
+              "surface-dim": "#dbdad5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#281900",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c19",
+              "on-tertiary": "#ffffff",
+              "background": "#fbf9f4",
+              "on-primary-fixed": "#081b38",
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae8e3",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-container": "#ad8d5b",
+              "surface-container-highest": "#e4e2dd",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f5f3ee",
+              "inverse-primary": "#b6c7eb",
+              "surface-variant": "#e4e2dd",
+              "tertiary-fixed-dim": "#e5c18a",
+              "on-secondary-container": "#785a1a",
+              "on-secondary-fixed": "#261900",
+              "primary": "#031632",
+              "surface-bright": "#fbf9f4",
+              "outline": "#75777e",
+              "on-primary-container": "#8293b5",
+              "tertiary": "#211400",
+              "primary-container": "#1a2b48",
+              "on-surface": "#1b1c19",
+              "on-error-container": "#93000a",
+              "secondary": "#775a19",
+              "on-primary-fixed-variant": "#374765",
+              "primary-fixed": "#d7e2ff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#5b4217",
+              "tertiary-container": "#3c2700",
+              "inverse-surface": "#30312e",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        body {
+            background-color: #fbf9f4; /* Overriding with manual background from prompt if needed, but surface matches */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Shell Layout: Main Wrapper -->
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col h-full border-r border-outline-variant/20 bg-surface-container-low w-80">
+<div class="px-8 py-10">
+<h1 class="text-secondary font-headline italic text-2xl tracking-tight">Santuário Digital</h1>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-4 px-4 py-3 text-outline hover:bg-surface-container-highest/50 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+<span class="font-headline text-lg">Sumário</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-outline hover:bg-surface-container-highest/50 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined">grade</span>
+<span class="font-headline text-lg">Favoritos</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-outline hover:bg-surface-container-highest/50 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-headline text-lg">Notas</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-outline hover:bg-surface-container-highest/50 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-headline text-lg">Histórico</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-outline hover:bg-surface-container-highest/50 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined">info</span>
+<span class="font-headline text-lg">Sobre</span>
+</a>
+</nav>
+<div class="p-8">
+<div class="bg-surface-container-highest p-4 rounded-xl">
+<p class="font-label text-xs uppercase tracking-widest text-outline mb-2">Versão de Estudo</p>
+<p class="font-headline text-primary font-bold">Westminster 1647</p>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col relative overflow-hidden bg-surface">
+<!-- TopAppBar: Search Focused -->
+<header class="fixed top-0 w-full md:relative z-50 bg-surface/80 backdrop-blur-md flex flex-col px-6 py-4">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-3">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-xl font-headline font-bold text-primary tracking-tight">Confissão de Fé</h2>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-secondary font-semibold">Busca Global</span>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full max-w-3xl mx-auto group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline group-focus-within:text-secondary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-highest border-none rounded-full font-body text-lg focus:ring-2 focus:ring-secondary/20 focus:bg-surface-container-lowest transition-all shadow-sm" placeholder="Procurar na Confissão..." type="text" value="Cristo"/>
+</div>
+</header>
+<!-- Content Area (Results) -->
+<section class="flex-1 overflow-y-auto pt-44 pb-24 md:pt-8 px-6">
+<div class="max-w-3xl mx-auto">
+<!-- Search Meta -->
+<div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant/10">
+<p class="font-label text-sm text-outline">Encontrados <span class="text-on-surface font-bold">12 resultados</span> para "Cristo"</p>
+<button class="text-secondary font-label text-xs uppercase tracking-wider font-bold hover:opacity-70 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">filter_list</span> Filtrar
+                        </button>
+</div>
+<!-- Results List -->
+<div class="space-y-6">
+<!-- Result Item 1 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all border-l-2 border-secondary hover:shadow-lg hover:-translate-y-1">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Capítulo VIII</h3>
+<h4 class="font-headline text-xl font-bold text-primary">De <span class="text-secondary">Cristo</span>, o Mediador</h4>
+</div>
+<span class="bg-surface-container p-2 rounded text-outline font-label text-xs">Seção I</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg italic">
+                                    "Aprouve a Deus, em seu eterno propósito, escolher e ordenar o Senhor Jesus, seu Filho Unigênito, para ser o Mediador entre Deus e o homem, o Profeta, Sacerdote e Rei..."
+                                </p>
+<div class="mt-4 flex items-center gap-4 text-outline group-hover:text-secondary transition-colors">
+<span class="font-label text-xs font-medium">Ler capítulo completo</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Result Item 2 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all border-l-2 border-transparent hover:border-secondary/30 hover:shadow-md">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Capítulo XI</h3>
+<h4 class="font-headline text-xl font-bold text-primary">Da Justificação</h4>
+</div>
+<span class="bg-surface-container p-2 rounded text-outline font-label text-xs">Seção III</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg">
+                                    "...pela sua obediência e morte, <span class="bg-secondary/10 text-secondary px-1 font-bold">Cristo</span> pagou plenamente a dívida de todos os que são justificados, e por eles fez um sacrifício real e adequado..."
+                                </p>
+<div class="mt-4 flex items-center gap-4 text-outline group-hover:text-secondary transition-colors">
+<span class="font-label text-xs font-medium">Ler capítulo completo</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Result Item 3 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-lowest p-6 rounded-xl transition-all border-l-2 border-transparent hover:border-secondary/30 hover:shadow-md">
+<div class="flex justify-between items-start mb-3">
+<div>
+<h3 class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Capítulo XIV</h3>
+<h4 class="font-headline text-xl font-bold text-primary">Da Fé Salvador</h4>
+</div>
+<span class="bg-surface-container p-2 rounded text-outline font-label text-xs">Seção II</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed text-lg">
+                                    "Mas os principais atos da fé salvadora são: aceitar e receber a <span class="bg-secondary/10 text-secondary px-1 font-bold">Cristo</span> e descansar só nele para a justificação, santificação e vida eterna..."
+                                </p>
+<div class="mt-4 flex items-center gap-4 text-outline group-hover:text-secondary transition-colors">
+<span class="font-label text-xs font-medium">Ler capítulo completo</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Result Item 4 (Asymmetric Editorial Style Card) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 overflow-hidden rounded-2xl bg-primary-container text-white shadow-xl my-12">
+<div class="md:col-span-4 relative h-48 md:h-auto">
+<img alt="Old leather bound bible on a wooden table with soft candle light" class="absolute inset-0 w-full h-full object-cover opacity-60" data-alt="Close-up of an ancient open book with yellowed pages and elegant typography in a dimly lit library study atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHTflsR9cckxt-UkAiP0pW8w3W7yU5anx6u7EydVvRWEtl-ZnwPLEJFJ2mC7XUvtKIXABPrJbMoDRbnaBOLZB299330rDrzo_jsUpLLCLoK0WtxDbvYRS4U68IPftbi37jwDBENA9HzoySI5KEz3tI7Q16dcxBOjPcyHK4RhuPvW8FLhKcLzcjditANSLyJRfz7tMqtVnKIJAWjqGn5Q_GSBA29GsR4OJBQwRen-PYckCLjV1R5cjqiQMtUDMVLM7x2Mu8LMo-RWQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container to-transparent"></div>
+</div>
+<div class="md:col-span-8 p-8 flex flex-col justify-center">
+<span class="font-label text-[10px] uppercase tracking-widest text-primary-fixed mb-2">Sugestão de Estudo</span>
+<h3 class="font-headline text-2xl font-bold mb-4">A Natureza Humana de <span class="text-secondary-fixed">Cristo</span></h3>
+<p class="font-body text-on-primary-container text-lg leading-relaxed mb-6">
+                                    Explore as referências cruzadas sobre a encarnação do Verbo em toda a Confissão.
+                                </p>
+<button class="bg-secondary text-white px-6 py-3 rounded-full font-label text-sm font-bold self-start hover:bg-secondary-fixed-dim transition-colors">
+                                    Ver Guia Temático
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full flex justify-around items-center pb-safe pt-2 bg-surface-container-lowest/80 backdrop-blur-xl border-t-[0.5px] border-outline/20 z-50 shadow-[0_-1px_10px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-[11px] font-medium tracking-tight">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label text-[11px] font-medium tracking-tight">Capítulos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label text-[11px] font-medium tracking-tight">Meu Estudo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline px-4 py-2 hover:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label text-[11px] font-medium tracking-tight">Ajustes</span>
+</a>
+</nav>
+</body></html>

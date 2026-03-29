@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-container": "#f0eee9",
+              "tertiary-fixed": "#ffdead",
+              "inverse-on-surface": "#f2f1ec",
+              "on-surface-variant": "#44474d",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b6c7eb",
+              "surface-tint": "#4e5f7e",
+              "outline-variant": "#c5c6ce",
+              "surface": "#fbf9f4",
+              "surface-dim": "#dbdad5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#281900",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c19",
+              "on-tertiary": "#ffffff",
+              "background": "#fbf9f4",
+              "on-primary-fixed": "#081b38",
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae8e3",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-container": "#ad8d5b",
+              "surface-container-highest": "#e4e2dd",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f5f3ee",
+              "inverse-primary": "#b6c7eb",
+              "surface-bright": "#fbf9f4",
+              "outline": "#75777e",
+              "on-primary-container": "#8293b5",
+              "tertiary": "#211400",
+              "primary-container": "#1a2b48",
+              "on-surface": "#1b1c19",
+              "on-error-container": "#93000a",
+              "secondary": "#775a19",
+              "on-primary-fixed-variant": "#374765",
+              "primary-fixed": "#d7e2ff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#5b4217",
+              "tertiary-container": "#3c2700",
+              "inverse-surface": "#30312e",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrolling-touch {
+            -webkit-overflow-scrolling: touch;
+        }
+        .sidebar-active {
+            background-color: #e4e2dd;
+            color: #031632;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="flex h-screen overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col w-80 h-full bg-surface-container-low border-r border-outline-variant/20 overflow-y-auto scrolling-touch">
+<!-- Sidebar Header -->
+<div class="px-6 py-8 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<h1 class="font-headline text-xl font-bold text-primary tracking-tight">Confissão de Fé</h1>
+</div>
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-highest/50 rounded-lg">
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm font-label w-full" placeholder="Buscar capítulos..." type="text"/>
+</div>
+</div>
+<!-- Chapter List -->
+<nav class="flex-1 px-4 pb-12">
+<div class="space-y-1">
+<div class="text-[10px] font-label font-bold text-outline uppercase tracking-widest px-4 mb-3">Sumário Geral</div>
+<!-- Chapter 1 Active State -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl sidebar-active group transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+<div class="flex flex-col">
+<span class="font-label text-sm font-semibold">I. Da Escritura Sagrada</span>
+</div>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+<span class="font-label text-sm">II. De Deus e da Trindade</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">balance</span>
+<span class="font-label text-sm">III. Dos Decretos Eternos</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+<span class="font-label text-sm">IV. Da Criação</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">security</span>
+<span class="font-label text-sm">V. Da Providência</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">heart_broken</span>
+<span class="font-label text-sm">VI. Da Queda do Homem</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">handshake</span>
+<span class="font-label text-sm">VII. Do Pacto de Deus</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-outline hover:bg-surface-container-high transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">church</span>
+<span class="font-label text-sm">VIII. De Cristo o Mediador</span>
+</a>
+<div class="pt-4 pb-2">
+<div class="h-px bg-outline-variant/10 mx-4"></div>
+</div>
+<!-- Remaining Chapters Placeholder -->
+<div class="px-4 py-2 space-y-3">
+<div class="flex items-center gap-3 text-outline/60 italic text-xs">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+<span>Capítulos IX ao XXXIII</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Bottom Brand Info -->
+<div class="p-6 mt-auto">
+<div class="rounded-2xl bg-primary-container p-4 relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-[10px] font-label font-bold text-on-primary-container uppercase tracking-tighter mb-1">Status de Estudo</p>
+<p class="text-white text-xs font-medium">3% Concluído</p>
+</div>
+<div class="absolute bottom-0 left-0 h-1 bg-secondary w-[3%]"></div>
+</div>
+</div>
+</aside>
+<!-- Main Reading Panel -->
+<main class="flex-1 flex flex-col bg-surface overflow-hidden relative">
+<!-- Desktop-Class Toolbar -->
+<header class="h-16 flex items-center justify-between px-8 bg-surface/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<button class="md:hidden p-2 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="flex items-center gap-2 text-primary">
+<span class="font-label text-xs font-bold uppercase tracking-widest opacity-50">Lendo agora</span>
+<span class="font-headline text-lg font-bold">Capítulo I</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2.5 rounded-xl hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">text_fields</span>
+</button>
+<button class="p-2.5 rounded-xl hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+<div class="w-px h-6 bg-outline-variant/20 mx-2"></div>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-full font-label text-sm font-medium hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Anotar</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Reading Content -->
+<div class="flex-1 overflow-y-auto scrolling-touch">
+<article class="max-w-3xl mx-auto px-8 py-16 md:py-24">
+<!-- Chapter Header -->
+<div class="mb-16 text-center">
+<span class="font-label text-secondary text-sm font-bold tracking-[0.2em] uppercase block mb-4">Capítulo Primeiro</span>
+<h2 class="font-headline text-5xl md:text-6xl font-bold text-primary leading-tight mb-8">Da Escritura Sagrada</h2>
+<div class="w-24 h-1 bg-secondary/30 mx-auto rounded-full"></div>
+</div>
+<!-- Chapter Body -->
+<div class="space-y-12 text-on-surface leading-relaxed text-lg md:text-xl font-body">
+<!-- Section 1 -->
+<div class="group relative">
+<span class="absolute -left-8 top-1 text-secondary/40 font-serif italic text-2xl select-none">1.</span>
+<p>
+                                Ainda que a luz da natureza e as obras da criação e da providência manifestem de tal modo a bondade, a sabedoria e o poder de Deus, que deixam os homens inescusáveis, contudo, não são suficientes para dar aquele conhecimento de Deus e da sua vontade, que é necessário para a salvação.
+                            </p>
+<p class="mt-4">
+                                Por isso foi o Senhor servido, em diversos tempos e por diferentes modos, revelar-se e declarar à sua Igreja aquela sua vontade; e depois, para melhor preservação e propagação da verdade, e para o estabelecimento e conforto da Igreja contra a corrupção da carne e malícia de Satanás e do mundo, foi igualmente servido fazê-la escrever toda. Isto torna a Escritura Sagrada indispensável, tendo cessado aqueles antigos modos de Deus revelar a sua vontade ao seu povo.
+                            </p>
+</div>
+<!-- Section 2 with List Decoration -->
+<div class="group relative">
+<span class="absolute -left-8 top-1 text-secondary/40 font-serif italic text-2xl select-none">2.</span>
+<p class="mb-6">
+                                Sob o nome de Escritura Sagrada, ou Palavra de Deus escrita, compreendem-se agora todos os livros do Velho e do Novo Testamento, que são os seguintes:
+                            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-6 rounded-2xl bg-surface-container-low border-l-4 border-secondary/20">
+<h4 class="font-label font-bold text-xs uppercase tracking-widest text-secondary mb-3">Antigo Testamento</h4>
+<p class="text-sm opacity-80 leading-loose">Gênesis, Êxodo, Levítico, Números, Deuteronômio, Josué, Juízes, Rute, I Samuel, II Samuel...</p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-low border-l-4 border-secondary/20">
+<h4 class="font-label font-bold text-xs uppercase tracking-widest text-secondary mb-3">Novo Testamento</h4>
+<p class="text-sm opacity-80 leading-loose">Mateus, Marcos, Lucas, João, Atos, Romanos, I Coríntios, II Coríntios, Gálatas, Efésios...</p>
+</div>
+</div>
+<p class="mt-6 italic text-on-surface-variant/70 text-base">
+                                Todos os quais foram dados por inspiração de Deus para serem a regra de fé e de prática.
+                            </p>
+</div>
+<!-- Section 3 -->
+<div class="group relative">
+<span class="absolute -left-8 top-1 text-secondary/40 font-serif italic text-2xl select-none">3.</span>
+<p>
+                                Os livros geralmente chamados Apócrifos, não sendo de inspiração divina, não fazem parte do cânon da Escritura; não têm, portanto, autoridade na Igreja de Deus, nem devem ser de modo algum aprovados ou usados senão como escritos humanos.
+                            </p>
+</div>
+<!-- Content Illustration -->
+<figure class="my-16">
+<img alt="Ancient manuscript" class="w-full h-80 object-cover rounded-3xl shadow-sm grayscale opacity-80 hover:grayscale-0 transition-all duration-700" data-alt="Close-up of an ancient illuminated manuscript on aged parchment with elegant calligraphy and golden leaf details in soft window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOnk7AGrEi-EpVPoUgOjZcQblKe9wjwVzGe-ocU73S8lxb3iiAuCrWnAFIYQepFh7mCF3l0VK5hmQID9GRohEpBlxhbYds4KTRPPYdCCXz-83imzgEO917MsUVT76sJ03hCaR_oZqrBUSabZNi5oDKI4aksU9yn6irWBie2O666KUWSBvXFDy1slWH-44_gD4Hflv6Ffxd9n8tS0S6V-UCeJj7QQRZXXUk5obZaRyZKs-E8Hbm2vKfeVvAuithC5ZLVW5eRNjT2Ek"/>
+<figcaption class="mt-4 text-center text-xs font-label text-outline tracking-wide">Representação artística da preservação documental sagrada.</figcaption>
+</figure>
+<!-- Section 4 -->
+<div class="group relative">
+<span class="absolute -left-8 top-1 text-secondary/40 font-serif italic text-2xl select-none">4.</span>
+<p>
+                                A autoridade da Escritura Sagrada, razão pela qual deve ser crida e obedecida, não depende do testemunho de qualquer homem ou igreja, mas depende inteiramente de Deus (que é a própria verdade), o seu autor; tem, portanto, de ser recebida, porque é a palavra de Deus.
+                            </p>
+</div>
+</div>
+<!-- Footer / Navigation -->
+<footer class="mt-24 pt-12 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-xs font-label text-outline uppercase tracking-widest mb-1">Capítulo Anterior</span>
+<span class="text-sm font-bold opacity-30">— Início —</span>
+</div>
+<a class="flex flex-col items-end group" href="#">
+<span class="text-xs font-label text-outline uppercase tracking-widest mb-1">Próximo Capítulo</span>
+<div class="flex items-center gap-2 text-secondary group-hover:translate-x-1 transition-transform">
+<span class="text-sm font-bold">II. De Deus e da Trindade</span>
+<span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</div>
+</a>
+</footer>
+</article>
+</div>
+<!-- Floating Sidebar Tool (Academic Gutter) -->
+<div class="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4">
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Bookmark">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Reference Links">
+<span class="material-symbols-outlined">link</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-outline hover:text-secondary transition-colors" title="Highlight">
+<span class="material-symbols-outlined">ink_highlighter</span>
+</button>
+</div>
+</main>
+</div>
+<!-- Mobile Nav Anchor -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest/80 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-4 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-tighter">Início</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-tighter">Capítulos</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-tighter">Estudo</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-outline">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-tighter">Ajustes</span>
+</button>
+</nav>
+</body></html>

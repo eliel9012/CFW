@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-container": "#f0eee9",
+              "tertiary-fixed": "#ffdead",
+              "inverse-on-surface": "#f2f1ec",
+              "on-surface-variant": "#44474d",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b6c7eb",
+              "surface-tint": "#4e5f7e",
+              "outline-variant": "#c5c6ce",
+              "surface": "#fbf9f4",
+              "surface-dim": "#dbdad5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#281900",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c19",
+              "on-tertiary": "#ffffff",
+              "background": "#fbf9f4",
+              "on-primary-fixed": "#081b38",
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae8e3",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-container": "#ad8d5b",
+              "surface-container-highest": "#e4e2dd",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f5f3ee",
+              "inverse-primary": "#b6c7eb",
+              "surface-variant": "#e4e2dd",
+              "tertiary-fixed-dim": "#e5c18a",
+              "on-secondary-container": "#785a1a",
+              "on-secondary-fixed": "#261900",
+              "primary": "#031632",
+              "surface-bright": "#fbf9f4",
+              "outline": "#75777e",
+              "on-primary-container": "#8293b5",
+              "tertiary": "#211400",
+              "primary-container": "#1a2b48",
+              "on-surface": "#1b1c19",
+              "on-error-container": "#93000a",
+              "secondary": "#775a19",
+              "on-primary-fixed-variant": "#374765",
+              "primary-fixed": "#d7e2ff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#5b4217",
+              "tertiary-container": "#3c2700",
+              "inverse-surface": "#30312e",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scrolling-touch { -webkit-overflow-scrolling: touch; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-md z-50 docked full-width">
+<div class="flex items-center gap-4">
+<button class="text-[#031632] dark:text-[#e4e2dd] active:opacity-70 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-serif font-bold text-[#031632] dark:text-[#fbf9f4]">Confissão de Fé</h1>
+</div>
+<div class="flex items-center">
+<button class="text-[#031632] dark:text-[#e4e2dd] active:opacity-70 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header -->
+<header class="mb-10">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-primary mb-2">Capítulos</h2>
+<p class="font-label text-sm text-outline tracking-wide uppercase">O Padrão Doutrinário de Westminster</p>
+</header>
+<!-- Filter Chips -->
+<nav class="flex gap-3 mb-8 overflow-x-auto scrolling-touch no-scrollbar pb-2">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label text-sm font-medium transition-all shadow-sm active:scale-95">
+                Todos
+            </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-sm font-medium hover:bg-surface-container transition-all active:scale-95">
+                Lidos
+            </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface-variant font-label text-sm font-medium hover:bg-surface-container transition-all active:scale-95">
+                Favoritos
+            </button>
+</nav>
+<!-- Chapter List -->
+<div class="space-y-1">
+<!-- Chapter I -->
+<div class="group flex items-center justify-between py-5 px-2 hover:bg-surface-container-low transition-colors duration-300 rounded-xl cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl text-secondary font-bold w-12 opacity-80 group-hover:opacity-100 transition-opacity">I</span>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-medium text-on-surface leading-tight">Da Escritura Sagrada</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest font-semibold">Concluído</span>
+</div>
+</div>
+</div>
+<button class="text-outline/40 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="grade" style="font-variation-settings: 'FILL' 0;">grade</span>
+</button>
+</div>
+<!-- Chapter II -->
+<div class="group flex items-center justify-between py-5 px-2 hover:bg-surface-container-low transition-colors duration-300 rounded-xl cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl text-secondary font-bold w-12 opacity-80 group-hover:opacity-100 transition-opacity">II</span>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-medium text-on-surface leading-tight">De Deus e da Santíssima Trindade</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest font-semibold">Concluído</span>
+</div>
+</div>
+</div>
+<button class="text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="grade" style="font-variation-settings: 'FILL' 1;">grade</span>
+</button>
+</div>
+<!-- Chapter III -->
+<div class="group flex items-center justify-between py-5 px-2 hover:bg-surface-container-low transition-colors duration-300 rounded-xl cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl text-secondary font-bold w-12 opacity-80 group-hover:opacity-100 transition-opacity">III</span>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-medium text-on-surface leading-tight">Dos Decretos Eternos de Deus</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline/20"></span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest font-medium italic">Não Lido</span>
+</div>
+</div>
+</div>
+<button class="text-outline/40 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+</button>
+</div>
+<!-- Chapter IV -->
+<div class="group flex items-center justify-between py-5 px-2 hover:bg-surface-container-low transition-colors duration-300 rounded-xl cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl text-secondary font-bold w-12 opacity-80 group-hover:opacity-100 transition-opacity">IV</span>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-medium text-on-surface leading-tight">Da Criação</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest font-semibold">Concluído</span>
+</div>
+</div>
+</div>
+<button class="text-outline/40 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+</button>
+</div>
+<!-- Chapter V -->
+<div class="group flex items-center justify-between py-5 px-2 hover:bg-surface-container-low transition-colors duration-300 rounded-xl cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl text-secondary font-bold w-12 opacity-80 group-hover:opacity-100 transition-opacity">V</span>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-medium text-on-surface leading-tight">Da Providência</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline/20"></span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest font-medium italic">Não Lido</span>
+</div>
+</div>
+</div>
+<button class="text-outline/40 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+</button>
+</div>
+<!-- Chapter VI -->
+<div class="group flex items-center justify-between py-5 px-2 hover:bg-surface-container-low transition-colors duration-300 rounded-xl cursor-pointer">
+<div class="flex items-center gap-6">
+<span class="font-headline text-2xl text-secondary font-bold w-12 opacity-80 group-hover:opacity-100 transition-opacity">VI</span>
+<div class="flex flex-col">
+<h3 class="font-headline text-xl font-medium text-on-surface leading-tight">Da Queda do Homem</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline/20"></span>
+<span class="font-label text-[10px] text-outline uppercase tracking-widest font-medium italic">Não Lido</span>
+</div>
+</div>
+</div>
+<button class="text-outline/40 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="grade">grade</span>
+</button>
+</div>
+<!-- Visual Break with Card -->
+<div class="mt-12 p-8 rounded-2xl bg-primary-container relative overflow-hidden group">
+<div class="absolute inset-0 opacity-10 mix-blend-overlay">
+<img alt="close-up of old book pages and ink texture" class="w-full h-full object-cover" data-alt="Macro photography of weathered antique manuscript pages with elegant ink calligraphy and subtle paper texture grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZO8_RONMRK1a2G2eUdzxJLQu1D6CUwr68XcsKeRp0gNuVBMtp5sUfdDtn9sK4SYUHL1co3qrntnvqvQx6_F5lG-QpQpVvIs8sXuaMUWv-X1EhTb1bWaAuAx7-JVmaiUqQVzbwgZ97m_3GJv6N9O9Ttx6HzFVfTD2aYRpECWWfpHRVkjwVI2oB9Lj97Jpm1ckMBDAfLAFrEYVks98EdlHZMFQkZQsqRTkk0oWWUNGKb4j2M29-K5s_Lx1u0FOq4MQm0QnNBNq2HGs"/>
+</div>
+<div class="relative z-10">
+<span class="font-label text-xs font-bold text-on-primary-container/60 uppercase tracking-widest mb-3 block">Próximo Capítulo Sugerido</span>
+<h4 class="font-headline text-3xl text-white font-bold mb-4">Do Pacto de Deus com o Homem</h4>
+<button class="bg-secondary text-white px-6 py-2 rounded-full font-label text-sm font-semibold hover:opacity-90 transition-opacity active:scale-95">
+                        Começar Estudo
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center pb-safe pt-2 bg-[#ffffff]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl z-50 docked full-width shadow-[0_-1px_10px_rgba(0,0,0,0.04)] border-t-[0.5px] border-[#75777e]/20">
+<a class="flex flex-col items-center justify-center text-[#75777e] dark:text-[#75777e] hover:opacity-80 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#775a19] dark:text-[#e4e2dd] font-bold hover:opacity-80 scale-100" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Capítulos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#75777e] dark:text-[#75777e] hover:opacity-80 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Meu Estudo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#75777e] dark:text-[#75777e] hover:opacity-80 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Ajustes</span>
+</a>
+</nav>
+</body></html>

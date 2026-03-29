@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-container": "#f0eee9",
+              "tertiary-fixed": "#ffdead",
+              "inverse-on-surface": "#f2f1ec",
+              "on-surface-variant": "#44474d",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b6c7eb",
+              "surface-tint": "#4e5f7e",
+              "outline-variant": "#c5c6ce",
+              "surface": "#fbf9f4",
+              "surface-dim": "#dbdad5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#281900",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c19",
+              "on-tertiary": "#ffffff",
+              "background": "#fbf9f4",
+              "on-primary-fixed": "#081b38",
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae8e3",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-container": "#ad8d5b",
+              "surface-container-highest": "#e4e2dd",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f5f3ee",
+              "inverse-primary": "#b6c7eb",
+              "surface-variant": "#e4e2dd",
+              "tertiary-fixed-dim": "#e5c18a",
+              "on-secondary-container": "#785a1a",
+              "on-secondary-fixed": "#261900",
+              "primary": "#031632",
+              "surface-bright": "#fbf9f4",
+              "outline": "#75777e",
+              "on-primary-container": "#8293b5",
+              "tertiary": "#211400",
+              "primary-container": "#1a2b48",
+              "on-surface": "#1b1c19",
+              "on-error-container": "#93000a",
+              "secondary": "#775a19",
+              "on-primary-fixed-variant": "#374765",
+              "primary-fixed": "#d7e2ff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#5b4217",
+              "tertiary-container": "#3c2700",
+              "inverse-surface": "#30312e",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { background-color: #fbf9f4; }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        font-size: 22px;
+      }
+      .settings-item:last-child { border-bottom: none; }
+      .ios-switch:checked + .ios-switch-dot { transform: translateX(1.25rem); }
+      .ios-switch:checked { background-color: #031632; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface antialiased pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-md z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#031632] dark:text-[#e4e2dd]" data-icon="menu">menu</span>
+<h1 class="font-serif text-xl font-bold text-[#031632] dark:text-[#fbf9f4]">Ajustes</h1>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[#031632] dark:text-[#e4e2dd]" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-24 px-4 max-w-2xl mx-auto space-y-8">
+<!-- Section: Leitura -->
+<section class="space-y-3">
+<h2 class="px-4 font-label text-[11px] font-medium uppercase tracking-widest text-outline">Leitura</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm">
+<!-- Dark Mode -->
+<div class="flex items-center justify-between px-4 py-4 settings-item border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-container/10 text-primary">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</div>
+<span class="font-label text-sm font-medium">Modo Escuro</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only ios-switch" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant/50 rounded-full transition-colors ios-switch"></div>
+<div class="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full transition-transform ios-switch-dot"></div>
+</label>
+</div>
+<!-- Text Size -->
+<div class="px-4 py-4 settings-item border-b border-outline-variant/20">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-container/10 text-primary">
+<span class="material-symbols-outlined" data-icon="text_fields">text_fields</span>
+</div>
+<span class="font-label text-sm font-medium">Tamanho do Texto</span>
+</div>
+<div class="flex items-center gap-4 px-2">
+<span class="text-xs font-label">A</span>
+<input class="w-full h-1 bg-outline-variant/30 rounded-lg appearance-none cursor-pointer accent-primary" max="24" min="12" type="range" value="16"/>
+<span class="text-xl font-label">A</span>
+</div>
+</div>
+<!-- Font Type -->
+<div class="flex items-center justify-between px-4 py-4 settings-item">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-container/10 text-primary">
+<span class="material-symbols-outlined" data-icon="font_download">font_download</span>
+</div>
+<span class="font-label text-sm font-medium">Tipo de Fonte</span>
+</div>
+<div class="flex bg-surface-container-high p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-serif font-bold bg-white shadow-sm rounded-md text-primary">Serif</button>
+<button class="px-3 py-1 text-xs font-label font-medium text-outline">Sans</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Geral -->
+<section class="space-y-3">
+<h2 class="px-4 font-label text-[11px] font-medium uppercase tracking-widest text-outline">Geral</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm">
+<!-- Keep Screen Active -->
+<div class="flex items-center justify-between px-4 py-4 settings-item border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-secondary-container/20 text-secondary">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<span class="font-label text-sm font-medium">Manter tela ativa</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only ios-switch" type="checkbox"/>
+<div class="w-11 h-6 bg-outline-variant/50 rounded-full transition-colors ios-switch"></div>
+<div class="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full transition-transform ios-switch-dot"></div>
+</label>
+</div>
+<!-- Notifications -->
+<div class="flex items-center justify-between px-4 py-4 settings-item">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-secondary-container/20 text-secondary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<span class="font-label text-sm font-medium">Notificações de Estudo</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Section: Sobre -->
+<section class="space-y-3">
+<h2 class="px-4 font-label text-[11px] font-medium uppercase tracking-widest text-outline">Sobre</h2>
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm">
+<!-- About Confession -->
+<div class="flex items-center justify-between px-4 py-4 settings-item border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-outline">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</div>
+<span class="font-label text-sm font-medium">Sobre a Confissão</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Credits -->
+<div class="flex items-center justify-between px-4 py-4 settings-item border-b border-outline-variant/20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-outline">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+</div>
+<span class="font-label text-sm font-medium">Créditos</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Version -->
+<div class="flex items-center justify-between px-4 py-4 settings-item">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container-highest text-outline">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</div>
+<span class="font-label text-sm font-medium">Versão do App</span>
+</div>
+<span class="font-label text-xs text-outline pr-2">2.4.0 (Build 12)</span>
+</div>
+</div>
+</section>
+<!-- Aesthetic Footer Image -->
+<div class="pt-8 pb-12 flex flex-col items-center opacity-40 grayscale contrast-125">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_stories">auto_stories</span>
+</div>
+<p class="font-serif italic text-sm text-center">Santuário Digital<br/>Documenta Fidei</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full flex justify-around items-center pb-safe pt-2 bg-[#ffffff]/80 dark:bg-[#1b1c19]/80 backdrop-blur-xl border-t-[0.5px] border-[#75777e]/20 z-50 shadow-[0_-1px_10px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#75777e] dark:text-[#75777e] hover:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#75777e] dark:text-[#75777e] hover:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Capítulos</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#75777e] dark:text-[#75777e] hover:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Meu Estudo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#775a19] dark:text-[#e4e2dd] font-bold hover:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-sans text-[11px] font-medium tracking-tight Inter">Ajustes</span>
+</a>
+</nav>
+</body></html>

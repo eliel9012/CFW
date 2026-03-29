@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-container": "#f0eee9",
+              "tertiary-fixed": "#ffdead",
+              "inverse-on-surface": "#f2f1ec",
+              "on-surface-variant": "#44474d",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b6c7eb",
+              "surface-tint": "#4e5f7e",
+              "outline-variant": "#c5c6ce",
+              "surface": "#fbf9f4",
+              "surface-dim": "#dbdad5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#281900",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c19",
+              "on-tertiary": "#ffffff",
+              "background": "#fbf9f4",
+              "on-primary-fixed": "#081b38",
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae8e3",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-container": "#ad8d5b",
+              "surface-container-highest": "#e4e2dd",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f5f3ee",
+              "inverse-primary": "#b6c7eb",
+              "surface-bright": "#fbf9f4",
+              "outline": "#75777e",
+              "on-primary-container": "#8293b5",
+              "tertiary": "#211400",
+              "primary-container": "#1a2b48",
+              "on-surface": "#1b1c19",
+              "on-error-container": "#93000a",
+              "secondary": "#775a19",
+              "on-primary-fixed-variant": "#374765",
+              "primary-fixed": "#d7e2ff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#5b4217",
+              "tertiary-container": "#3c2700",
+              "inverse-surface": "#30312e",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-scriptorium {
+            background: radial-gradient(circle at center, #1a2b48 0%, #031632 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-primary-container font-body overflow-hidden">
+<!-- Splash Screen Container -->
+<div class="relative min-h-screen w-full flex flex-col items-center justify-between bg-scriptorium px-8 py-16">
+<!-- Top Spacer for iOS Balance -->
+<div class="h-12"></div>
+<!-- Center: Elegant Logo & Brand -->
+<div class="flex flex-col items-center space-y-8">
+<!-- Symbol: Flame over Open Book -->
+<div class="relative flex items-center justify-center">
+<!-- Background Glow -->
+<div class="absolute w-32 h-32 bg-secondary/10 blur-3xl rounded-full"></div>
+<div class="relative flex flex-col items-center">
+<!-- Flame -->
+<span class="material-symbols-outlined text-6xl text-secondary select-none" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1; filter: drop-shadow(0 0 8px rgba(119, 90, 25, 0.4));">
+                        local_fire_department
+                    </span>
+<!-- Open Book -->
+<span class="material-symbols-outlined text-8xl text-secondary -mt-6 select-none" data-icon="menu_book">
+                        menu_book
+                    </span>
+</div>
+</div>
+<!-- Typography Header -->
+<div class="text-center space-y-2">
+<h1 class="font-headline text-3xl md:text-4xl text-surface tracking-tight font-medium">
+                    Confissão de Fé
+                </h1>
+<p class="font-headline italic text-lg text-on-primary-container/80 tracking-wide">
+                    de Westminster
+                </p>
+</div>
+</div>
+<!-- Bottom: Secondary Branding -->
+<div class="flex flex-col items-center space-y-6">
+<!-- Subtle Loading Indicator (iOS Style) -->
+<div class="flex space-x-1">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/40"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/20"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-secondary/10"></div>
+</div>
+<div class="text-center">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-primary-container font-medium">
+                    Padrões Presbiterianos
+                </span>
+</div>
+</div>
+<!-- Decorative Textures (Scribal Metaphor) -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="subtle macro texture of aged parchment paper with fine organic grains and fibers for a tactile historical feel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAfvPonr7jZSVY-tfzAsCAZB65z-5JufEnuAsUbwb-10oQXYvte5YmLPjeM6wvaYSJ9p44Y7kEtL1vApVcGNu8BlJGWKbCf46QJfLnwqX5rZ081L9b6OwqF-Bn7fby3-2nE39fu5UujhUN-6T5YD8kNTFNQhbgj3YVWX_GKyEDFYS0CWXTULHxQeWHYgcCIGUiJ9iQSt2z3onw1T_Ew8NMHHpj3vSwkC0cGxWTj7IqOz71Wh-jEQs_L7aSQO8YWd2RypoDqI0YkC8"/>
+</div>
+</div>
+<!-- Hidden Screen Structure (For Context if transitioned) -->
+<!-- The prompt requested a splash screen only, so we maintain focus on the single canvas -->
+<div class="fixed inset-0 pointer-events-none border-[12px] border-primary-container/20"></div>
+</body></html>

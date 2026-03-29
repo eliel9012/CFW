@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#5d4201",
+              "surface-container": "#f0eee9",
+              "tertiary-fixed": "#ffdead",
+              "inverse-on-surface": "#f2f1ec",
+              "on-surface-variant": "#44474d",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#b6c7eb",
+              "surface-tint": "#4e5f7e",
+              "outline-variant": "#c5c6ce",
+              "surface": "#fbf9f4",
+              "surface-dim": "#dbdad5",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#281900",
+              "on-error": "#ffffff",
+              "on-background": "#1b1c19",
+              "on-tertiary": "#ffffff",
+              "background": "#fbf9f4",
+              "on-primary-fixed": "#081b38",
+              "secondary-fixed-dim": "#e9c176",
+              "surface-container-high": "#eae8e3",
+              "secondary-fixed": "#ffdea5",
+              "on-tertiary-container": "#ad8d5b",
+              "surface-container-highest": "#e4e2dd",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f5f3ee",
+              "inverse-primary": "#b6c7eb",
+              "surface-variant": "#e4e2dd",
+              "tertiary-fixed-dim": "#e5c18a",
+              "on-secondary-container": "#785a1a",
+              "on-secondary-fixed": "#261900",
+              "primary": "#031632",
+              "surface-bright": "#fbf9f4",
+              "outline": "#75777e",
+              "on-primary-container": "#8293b5",
+              "tertiary": "#211400",
+              "primary-container": "#1a2b48",
+              "on-surface": "#1b1c19",
+              "on-error-container": "#93000a",
+              "secondary": "#775a19",
+              "on-primary-fixed-variant": "#374765",
+              "primary-fixed": "#d7e2ff",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#5b4217",
+              "tertiary-container": "#3c2700",
+              "inverse-surface": "#30312e",
+              "secondary-container": "#fed488",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.reading-text {
+    line-height: 1.8
+    }
+.scrolled-header {
+    backdrop-filter: blur(12px)
+    }
+.paper-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3ufxzy5O9uuw0H45PPxGSOnCtSKQEOihrJnSTPncnSW_aEY92_570aHdiDGL8Qtbu0XXaHmSLgjHSbTnkQJGyPLohjinQf3BTzUCS7bckbvyobSNTqSkn_xX1erVot7gPcgFIEfCoKQQxm3o8S_psYuhzMmgfVjuTG5jgMSeroSid9ljwlsHXdlHvfHkILVzPnDUvtP1ouQwkr05F-GQOH3R8vndEEI58bC8fKsR66k5wwvQNSQ6XyVUFinHVGRTt7hgJHrubPM)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container paper-texture">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-[#1b1c19]/80 backdrop-blur-md flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="text-on-surface flex items-center justify-center p-2 active:opacity-70 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h2 class="text-xl font-headline font-bold text-[#031632] dark:text-[#fbf9f4]">Capítulo I</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-[#75777e] hover:text-[#775a19] transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="text_fields">text_fields</span>
+</button>
+<button class="p-2 text-[#75777e] hover:text-[#775a19] transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="max-w-3xl mx-auto px-6 pt-32 pb-40">
+<!-- Chapter Identity -->
+<div class="mb-16 text-center">
+<span class="font-label text-secondary uppercase tracking-[0.2em] text-xs font-semibold mb-4 block">Confissão de Fé de Westminster</span>
+<h1 class="font-headline text-5xl md:text-7xl text-primary font-medium tracking-tight mb-8">Da Escritura Sagrada</h1>
+<div class="w-12 h-[1px] bg-secondary/30 mx-auto"></div>
+</div>
+<!-- Scriptorium Gutter Reading Layout -->
+<article class="space-y-12">
+<!-- Section 1 -->
+<section class="group relative">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-12 shrink-0">
+<span class="font-headline text-2xl italic text-secondary/40 select-none">I.</span>
+</div>
+<div class="reading-text text-lg md:text-xl text-on-surface font-light">
+                        Posto que a luz da natureza e as obras da criação e da providência manifestem a bondade, a sabedoria e o poder de Deus, de tal modo que os homens são inescusáveis, todavia não são suficientes para dar aquele conhecimento de Deus e da sua vontade, necessário para a salvação.
+                    </div>
+</div>
+</section>
+<!-- Section 2 -->
+<section class="group relative">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-12 shrink-0">
+<span class="font-headline text-2xl italic text-secondary/40 select-none">II.</span>
+</div>
+<div class="reading-text text-lg md:text-xl text-on-surface font-light">
+                        Sob o nome de Escritura Sagrada, ou Palavra de Deus escrita, compreendem-se agora todos os livros do Velho e do Novo Testamento, os quais são estes: No Velho Testamento: Gênesis, Êxodo, Levítico, Números, Deuteronômio... todos os quais foram dados por inspiração de Deus para serem a regra de fé e de prática.
+                    </div>
+</div>
+</section>
+<!-- Decorative Break -->
+<div class="py-8 flex justify-center">
+<span class="material-symbols-outlined text-secondary/20" data-icon="auto_stories" style="font-size: 32px;">auto_stories</span>
+</div>
+<!-- Section 3 -->
+<section class="group relative">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-12 shrink-0">
+<span class="font-headline text-2xl italic text-secondary/40 select-none">III.</span>
+</div>
+<div class="reading-text text-lg md:text-xl text-on-surface font-light">
+                        Os livros geralmente chamados Apócrifos, não sendo de inspiração divina, não fazem parte do cânon da Escritura; não têm, portanto, autoridade na Igreja de Deus, nem devem ser de qualquer modo aprovados ou usados, senão como escritos humanos.
+                    </div>
+</div>
+</section>
+<!-- Section 4 -->
+<section class="group relative">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-12 shrink-0">
+<span class="font-headline text-2xl italic text-secondary/40 select-none">IV.</span>
+</div>
+<div class="reading-text text-lg md:text-xl text-on-surface font-light">
+                        A autoridade da Escritura Sagrada, razão pela qual deve ser crida e obedecida, não depende do testemunho de qualquer homem ou igreja, mas depende somente de Deus (a mesma verdade) que é o seu autor; tem, portanto, de ser recebida, porque é a palavra de Deus.
+                    </div>
+</div>
+</section>
+</article>
+<!-- Footer Navigation -->
+<footer class="mt-24 border-t border-outline-variant/20 pt-12 flex flex-col items-center">
+<p class="font-label text-xs text-outline mb-6 uppercase tracking-widest">Final do Capítulo I</p>
+<button class="group flex flex-col items-center gap-4 active:scale-95 transition-transform">
+<span class="font-headline text-3xl text-primary hover:text-secondary transition-colors duration-300">Próximo: Da Unidade de Deus</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-y-1 transition-transform" data-icon="keyboard_double_arrow_down">keyboard_double_arrow_down</span>
+</button>
+</footer>
+</main>
+<!-- Contextual Scholar Toolbar (Floating) -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+<div class="bg-surface-container-highest/90 backdrop-blur-xl px-6 py-3 rounded-full flex items-center gap-6 shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-white/20">
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="stylus_note">stylus_note</span>
+<span class="font-label text-[10px] text-outline font-medium">Nota</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant/30"></div>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="history_edu">history_edu</span>
+<span class="font-label text-[10px] text-outline font-medium">Destaque</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant/30"></div>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="share">share</span>
+<span class="font-label text-[10px] text-outline font-medium">Compartilhar</span>
+</button>
+<div class="w-[1px] h-6 bg-outline-variant/30"></div>
+<button class="flex flex-col items-center gap-1 group">
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors" data-icon="bookmark">bookmark</span>
+<span class="font-label text-[10px] text-outline font-medium">Salvar</span>
+</button>
+</div>
+</div>
+<!-- Side Margin Annotation Area (Visual Hint for Tablet/Desktop) -->
+<aside class="hidden xl:block fixed right-12 top-1/2 -translate-y-1/2 w-48 opacity-40 hover:opacity-100 transition-opacity">
+<div class="border-l border-secondary/20 pl-4 py-4">
+<p class="font-label text-[11px] text-on-surface-variant leading-relaxed">
+<span class="text-secondary font-bold">Nota do Pesquisador:</span><br/>
+                Observe a ênfase na exclusividade da autoridade bíblica em relação à tradição eclesiástica no Ponto IV.
+            </p>
+</div>
+</aside>
+</body></html>
