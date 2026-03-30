@@ -20,22 +20,41 @@ struct ChapterListView: View {
     }
 
     var body: some View {
-        List(filtered, selection: $selectedChapterID) { chapter in
-            NavigationLink(value: chapter.id) {
-                ChapterRowView(chapter: chapter)
+        Group {
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                iPadChapterList
+            } else {
+                iPhoneChapterList
             }
-            .listRowBackground(AppTheme.surface)
-            .listRowSeparatorTint(AppTheme.outline.opacity(0.15))
         }
-        .listStyle(.plain)
         .searchable(text: $searchText, prompt: "Buscar capítulo")
         .navigationTitle("Capítulos")
-        .navigationDestination(for: Int.self) { id in
-            if let chapter = contentService.chapter(id: id) {
-                ReadingView(chapter: chapter)
+        .background(AppTheme.surface.ignoresSafeArea())
+    }
+
+    private var iPhoneChapterList: some View {
+        List(filtered) { chapter in
+            NavigationLink(value: chapter.id) {
+                row(for: chapter)
             }
         }
-        .background(AppTheme.surface.ignoresSafeArea())
+        .listStyle(.plain)
+    }
+
+    private var iPadChapterList: some View {
+        List(filtered, selection: $selectedChapterID) { chapter in
+            row(for: chapter)
+                .tag(chapter.id)
+                .contentShape(Rectangle())
+        }
+        .listStyle(.plain)
+    }
+
+    @ViewBuilder
+    private func row(for chapter: Chapter) -> some View {
+        ChapterRowView(chapter: chapter)
+            .listRowBackground(AppTheme.surface)
+            .listRowSeparatorTint(AppTheme.outline.opacity(0.15))
     }
 }
 
@@ -49,13 +68,22 @@ private struct ChapterRowView: View {
     var body: some View {
         HStack(spacing: 16) {
             // Roman numeral badge
-            Text(chapter.romanNumeral)
-                .font(.system(size: 12, weight: .bold, design: .serif))
-                .foregroundStyle(.white)
-                .frame(width: 40, height: 40)
-                .background(AppTheme.primaryContainer)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .minimumScaleFactor(0.6)
+            if chapter.hasNumeral {
+                Text(chapter.romanNumeral)
+                    .font(.system(size: 12, weight: .bold, design: .serif))
+                    .foregroundStyle(.white)
+                    .frame(width: 40, height: 40)
+                    .background(AppTheme.primaryContainer)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .minimumScaleFactor(0.6)
+            } else {
+                Image(systemName: "doc.text")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(.white)
+                    .frame(width: 40, height: 40)
+                    .background(AppTheme.primaryContainer)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
 
             VStack(alignment: .leading, spacing: 3) {
                 Text(chapter.title)
@@ -79,7 +107,9 @@ private struct ChapterRowView: View {
         }
         .padding(.vertical, 4)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Capítulo \(chapter.romanNumeral), \(chapter.title)")
+        .accessibilityLabel(chapter.hasNumeral
+            ? "Capítulo \(chapter.romanNumeral), \(chapter.title)"
+            : chapter.title)
     }
 }
 

@@ -11,5 +11,6 @@ struct Section: Identifiable, Codable, Equatable, Hashable {
     let references: String
 
     var hasReferences: Bool { !references.isEmpty }
-    var displayNumber: String { "§\(romanNumeral)" }
+    var hasNumber: Bool { !romanNumeral.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+    var displayNumber: String { hasNumber ? "§\(romanNumeral)" : "" }
 }

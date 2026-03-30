@@ -242,12 +242,19 @@ struct HomeView: View {
             }
         } label: {
             HStack(spacing: 14) {
-                Text(chapter.romanNumeral)
-                    .font(.system(size: 13, weight: .semibold, design: .serif))
-                    .foregroundStyle(.white)
-                    .frame(width: 36, height: 36)
-                    .background(AppTheme.primaryContainer)
-                    .clipShape(Circle())
+                Group {
+                    if chapter.hasNumeral {
+                        Text(chapter.romanNumeral)
+                            .font(.system(size: 13, weight: .semibold, design: .serif))
+                    } else {
+                        Image(systemName: "doc.text")
+                            .font(.system(size: 13, weight: .semibold))
+                    }
+                }
+                .foregroundStyle(.white)
+                .frame(width: 36, height: 36)
+                .background(AppTheme.primaryContainer)
+                .clipShape(Circle())
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(chapter.title)

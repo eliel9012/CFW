@@ -122,7 +122,7 @@ struct SearchView: View {
                         .textCase(.uppercase)
                         .foregroundStyle(AppTheme.secondary)
 
-                    if let section = result.section {
+                    if let section = result.section, section.hasNumber {
                         Text("· §\(section.romanNumeral)")
                             .font(AppTheme.uiLabel(size: 11))
                             .foregroundStyle(AppTheme.outline)

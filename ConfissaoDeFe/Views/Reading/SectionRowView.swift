@@ -14,15 +14,16 @@ struct SectionRowView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Section number header
             HStack(alignment: .center, spacing: 10) {
-                Text(section.displayNumber)
-                    .font(.system(size: fontSize * 0.75, weight: .semibold, design: .serif))
-                    .foregroundStyle(AppTheme.secondary)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
-                    .background(AppTheme.secondaryContainer.opacity(0.45))
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                if section.hasNumber {
+                    Text(section.displayNumber)
+                        .font(.system(size: fontSize * 0.75, weight: .semibold, design: .serif))
+                        .foregroundStyle(AppTheme.secondary)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(AppTheme.secondaryContainer.opacity(0.45))
+                        .clipShape(RoundedRectangle(cornerRadius: 4))
+                }
 
                 Spacer()
 
@@ -57,7 +58,9 @@ struct SectionRowView: View {
                         .padding(8)
                         .contentShape(Rectangle())
                 }
-                .accessibilityLabel("Opções da seção \(section.romanNumeral)")
+                .accessibilityLabel(section.hasNumber
+                    ? "Opções da seção \(section.romanNumeral)"
+                    : "Opções do texto")
             }
 
             // Body text
@@ -75,7 +78,9 @@ struct SectionRowView: View {
         }
         .padding(.vertical, 8)
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Seção \(section.romanNumeral). \(section.text)")
+        .accessibilityLabel(section.hasNumber
+            ? "Seção \(section.romanNumeral). \(section.text)"
+            : section.text)
     }
 
     // MARK: - References
@@ -100,7 +105,11 @@ struct SectionRowView: View {
     // MARK: - Copy helpers
 
     private var formattedText: String {
-        var s = "\(chapter.fullTitle) — §\(section.romanNumeral)\n\n\(section.text)"
+        var s = chapter.fullTitle
+        if section.hasNumber {
+            s += " — §\(section.romanNumeral)"
+        }
+        s += "\n\n\(section.text)"
         if section.hasReferences {
             s += "\n\n\(section.references)"
         }

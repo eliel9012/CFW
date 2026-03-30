@@ -8,8 +8,17 @@ struct Chapter: Identifiable, Codable, Equatable, Hashable {
     let title: String
     let sections: [Section]
 
-    var displayTitle: String { "Capítulo \(romanNumeral)" }
-    var fullTitle: String { "\(romanNumeral) — \(title)" }
+    var hasNumeral: Bool {
+        !romanNumeral.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var displayTitle: String {
+        hasNumeral ? "Capítulo \(romanNumeral)" : title
+    }
+
+    var fullTitle: String {
+        hasNumeral ? "\(romanNumeral) — \(title)" : title
+    }
 
     /// All text content joined for full-text search
     var allText: String {

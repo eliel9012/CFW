@@ -11,6 +11,7 @@ struct MainTabView: View {
 
     @State private var selectedTab: AppTab = .home
     @State private var selectedChapterID: Int? = nil
+    @State private var chapterPath: [Int] = []
     @State private var iPadSelectedTab: AppTab? = .home
 
     var body: some View {
@@ -36,8 +37,16 @@ struct MainTabView: View {
                 HomeView(selectedTab: $selectedTab, selectedChapterID: $selectedChapterID)
             }
             Tab(AppTab.chapters.label, systemImage: AppTab.chapters.icon, value: AppTab.chapters) {
-                NavigationStack {
+                NavigationStack(path: $chapterPath) {
                     ChapterListView(selectedChapterID: $selectedChapterID)
+                        .navigationDestination(for: Int.self) { id in
+                            if let chapter = contentService.chapter(id: id) {
+                                ReadingView(chapter: chapter)
+                                    .onAppear {
+                                        selectedChapterID = id
+                                    }
+                            }
+                        }
                 }
             }
             Tab(AppTab.search.label, systemImage: AppTab.search.icon, value: AppTab.search) {
@@ -57,6 +66,14 @@ struct MainTabView: View {
             }
         }
         .tint(AppTheme.secondary)
+        .onChange(of: selectedTab) { _, newTab in
+            guard newTab == .chapters else { return }
+            syncIPhoneChapterPath()
+        }
+        .onChange(of: selectedChapterID) { _, _ in
+            guard selectedTab == .chapters else { return }
+            syncIPhoneChapterPath()
+        }
     }
 
     // MARK: - iPad Layout
@@ -128,6 +145,19 @@ struct MainTabView: View {
             .padding(24)
             .background(.ultraThinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
+    }
+
+    private func syncIPhoneChapterPath() {
+        guard UIDevice.current.userInterfaceIdiom != .pad else { return }
+
+        guard let selectedChapterID else {
+            chapterPath.removeAll()
+            return
+        }
+
+        if chapterPath != [selectedChapterID] {
+            chapterPath = [selectedChapterID]
         }
     }
 }

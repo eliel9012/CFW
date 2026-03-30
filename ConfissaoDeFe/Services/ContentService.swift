@@ -10,9 +10,16 @@ final class ContentService: ObservableObject {
     @Published private(set) var chapters: [Chapter] = []
     @Published private(set) var isLoading = false
 
-    private let cacheFilename = "chapters_cache.json"
+    private let cacheFilename = "chapters_cache_v4.json"
 
-    init() { load() }
+    init() {
+        // Warm launches should come up with content immediately when the cache already exists.
+        if let cached = loadFromDisk() {
+            chapters = cached
+        } else {
+            load()
+        }
+    }
 
     // MARK: - Public
 
