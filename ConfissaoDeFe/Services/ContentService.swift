@@ -36,16 +36,6 @@ final class ContentService: ObservableObject {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self else { return }
 
-            // Try disk cache first for fast startup
-            if let cached = self.loadFromDisk() {
-                DispatchQueue.main.async {
-                    self.chapters = cached
-                    self.isLoading = false
-                }
-                return
-            }
-
-            // Parse HTML and persist cache
             let parsed = HTMLParser.parseConfession()
             self.saveToDisk(parsed)
 

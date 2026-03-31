@@ -12,6 +12,7 @@ struct ReadingView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var showFontControls = false
+    @State private var navigateToChapterID: Int?
 
     var body: some View {
         ScrollView {
@@ -36,6 +37,11 @@ struct ReadingView: View {
         .navigationTitle(chapter.displayTitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { toolbarContent }
+        .navigationDestination(item: $navigateToChapterID) { id in
+            if let target = contentService.chapter(id: id) {
+                ReadingView(chapter: target)
+            }
+        }
         .onAppear {
             appState.lastReadChapterID = chapter.id
         }
@@ -150,13 +156,17 @@ struct ReadingView: View {
     private var chapterNavigationMenu: some View {
         Group {
             if let prev = contentService.chapter(id: chapter.id - 1) {
-                NavigationLink(destination: ReadingView(chapter: prev)) {
+                Button {
+                    navigateToChapterID = prev.id
+                } label: {
                     Label("← \(prev.displayTitle): \(prev.title)", systemImage: "arrow.left")
                 }
             }
             Divider()
             if let next = contentService.chapter(id: chapter.id + 1) {
-                NavigationLink(destination: ReadingView(chapter: next)) {
+                Button {
+                    navigateToChapterID = next.id
+                } label: {
                     Label("→ \(next.displayTitle): \(next.title)", systemImage: "arrow.right")
                 }
             }

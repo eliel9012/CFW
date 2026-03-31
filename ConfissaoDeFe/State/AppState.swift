@@ -1,6 +1,4 @@
-import Foundation
 import SwiftUI
-import Combine
 
 // MARK: - AppState
 // Centralises reading progress, favourites and study notes.

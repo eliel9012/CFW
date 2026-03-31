@@ -8,6 +8,7 @@ struct SearchView: View {
     @Binding var selectedChapterID: Int?
 
     @State private var query = ""
+    @State private var debouncedQuery = ""
     @FocusState private var focused: Bool
 
     // MARK: - Search Results
@@ -20,12 +21,11 @@ struct SearchView: View {
     }
 
     private var results: [SearchResult] {
-        guard query.count >= 2 else { return [] }
-        let q = query.lowercased()
+        guard debouncedQuery.count >= 2 else { return [] }
+        let q = debouncedQuery.lowercased()
         var found: [SearchResult] = []
 
         for chapter in contentService.chapters {
-            // Match chapter title
             if chapter.title.lowercased().contains(q) ||
                chapter.romanNumeral.lowercased().contains(q) {
                 found.append(SearchResult(
@@ -35,7 +35,6 @@ struct SearchView: View {
                     snippet: chapter.title
                 ))
             }
-            // Match section text / references
             for section in chapter.sections {
                 let combined = section.text + " " + section.references
                 if combined.lowercased().contains(q) {
@@ -77,6 +76,15 @@ struct SearchView: View {
         .background(AppTheme.surface.ignoresSafeArea())
         .searchable(text: $query, prompt: "Buscar na Confissão…")
         .navigationTitle("Busca")
+        .onChange(of: query) { _, newValue in
+            let captured = newValue
+            Task {
+                try? await Task.sleep(for: .milliseconds(300))
+                if query == captured {
+                    debouncedQuery = captured
+                }
+            }
+        }
     }
 
     // MARK: - Sub-views
