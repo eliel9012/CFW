@@ -7,9 +7,9 @@ struct ConfissaoDeFeApp: App {
     @StateObject private var appState       = AppState()
     @StateObject private var settings       = ReadingSettings()
 
-    @State private var showSplash = false
+    @State private var showSplash = true
 
-    private let coldStartSplashDuration: UInt64 = 250_000_000
+    private let coldStartSplashDuration: UInt64 = 2_200_000_000
 
     var body: some Scene {
         WindowGroup {
@@ -27,13 +27,10 @@ struct ConfissaoDeFeApp: App {
                 }
             }
             .onAppear {
-                guard contentService.chapters.isEmpty else { return }
-                showSplash = true
-
                 Task {
                     try? await Task.sleep(nanoseconds: coldStartSplashDuration)
                     await MainActor.run {
-                        withAnimation(.easeOut(duration: 0.2)) {
+                        withAnimation(.easeOut(duration: 0.5)) {
                             showSplash = false
                         }
                     }
